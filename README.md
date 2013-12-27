@@ -1,0 +1,4 @@
+SGit
+====
+
+NGit for Schumix
