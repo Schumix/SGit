@@ -62,8 +62,8 @@ External/ngit/NSch/Makefile
 External/ngit/NGit/ngit.pc
 External/ngit/NGit/Makefile
 External/ngit/Makefile
-SGit/sgit
-SGit/Makefile
+Applications/SGit/sgit
+Applications/SGit/Makefile
 Makefile
 
 ])

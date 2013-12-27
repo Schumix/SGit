@@ -3,8 +3,8 @@ EXTRA_DIST =  expansions.m4 External/ngit/Dependencies/Mono.Posix.dll External/n
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG
- SUBDIRS =  External/ngit SGit
+ SUBDIRS =  External/ngit Applications/SGit
 endif
 if ENABLE_RELEASE
- SUBDIRS =  External/ngit SGit
+ SUBDIRS =  External/ngit Applications/SGit
 endif

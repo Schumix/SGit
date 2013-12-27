@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{849A2C9C-8796-424F-A01D-BBECFFFB3710}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGit", "SGit\SGit.csproj", "{E9CDC6A4-39B3-427C-B533-778DC49C1374}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGit", "Applications\SGit\SGit.csproj", "{E9CDC6A4-39B3-427C-B533-778DC49C1374}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{DFE49F8F-5679-4C59-9C78-025D0C3170DD}"
 EndProject
@@ -57,6 +57,6 @@ Global
 		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD} = {DFE49F8F-5679-4C59-9C78-025D0C3170DD}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = SGit\SGit.csproj
+		StartupItem = Applications\SGit\SGit.csproj
 	EndGlobalSection
 EndGlobal
