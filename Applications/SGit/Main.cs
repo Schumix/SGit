@@ -43,8 +43,8 @@ namespace SGit
 
 			if(File.Exists(Path.Combine(DirName, ".gitmodules")))
 			{
-				var gitmodule = new StreamReader(Path.Combine(DirName, ".gitmodules"));
 				string line = string.Empty;
+				var gitmodule = new StreamReader(Path.Combine(DirName, ".gitmodules"));
 
 				while((line = gitmodule.ReadLine()) != null)
 				{
