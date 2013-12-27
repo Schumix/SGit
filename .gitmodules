@@ -1,0 +1,3 @@
+[submodule "External/ngit"]
+	path = External/ngit
+	url = git@github.com:Schumix/ngit.git
