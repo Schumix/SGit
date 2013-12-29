@@ -28,7 +28,10 @@ namespace SGit
 	{
 		public static void Main(string[] args)
 		{
-			Gitmodule(Environment.CurrentDirectory);
+			if(Directory.Exists(Path.Combine(Environment.CurrentDirectory, ".git")))
+				Gitmodule(Environment.CurrentDirectory);
+			else
+				Console.WriteLine("No such .git directory.");
 
 			GC.Collect();
 			Console.WriteLine();
