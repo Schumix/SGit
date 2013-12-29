@@ -21,21 +21,85 @@ using System;
 using System.IO;
 using NGit;
 using NGit.Api;
+using SGit.Options;
+using SGit.Exceptions;
 
 namespace SGit
 {
 	class MainClass
 	{
+		private const string TempDir = ".temp";
+
 		public static void Main(string[] args)
 		{
-			if(Directory.Exists(Path.Combine(Environment.CurrentDirectory, ".git")))
-				Gitmodule(Environment.CurrentDirectory);
+			bool help = false;
+			bool appveyor = false;
+			string repourl = "git://github.com/Schumix/Schumix2.git";
+			string branch = "master";
+
+			var os = new OptionSet()
+			{
+				{ "h|?|help", "Display help.", v => help = true },
+				{ "appveyor", "Appveyor enabled.", v => appveyor = true },
+				{ "repo-url=", "Set repository url.", v => repourl = v },
+				{ "branch=", "Set branch.", v => branch = v },
+			};
+
+			try
+			{
+				os.Parse(args);
+
+				if(help)
+				{
+					ShowHelp(os);
+					return;
+				}
+			}
+			catch(OptionException oe)
+			{
+				Console.Error.WriteLine("{0} for options '{1}'", oe.Message, oe.OptionName);
+				return;
+			}
+
+			if(appveyor)
+			{
+				try
+				{
+					if(Directory.Exists(TempDir))
+						Directory.Delete(TempDir, true);
+
+					var cmd = Git.CloneRepository();
+					cmd.SetProgressMonitor(new NullProgressMonitor());
+					cmd.SetURI(repourl);
+					cmd.SetRemote("origin");
+					cmd.SetBranch("refs/heads/" + branch);
+					cmd.SetDirectory(Path.Combine(Environment.CurrentDirectory, TempDir));
+					cmd.SetCloneSubmodules(true);
+					cmd.Call();
+				}
+				catch(Exception e)
+				{
+					Console.Error.WriteLine(e);
+				}
+			}
 			else
-				Console.WriteLine("No such .git directory.");
+			{
+				if(Directory.Exists(Path.Combine(Environment.CurrentDirectory, ".git")))
+					Gitmodule(Environment.CurrentDirectory);
+				else
+					Console.Error.WriteLine("No such .git directory.");
+			}
 
 			GC.Collect();
 			Console.WriteLine();
 			Console.WriteLine("Done");
+		}
+
+		private static void ShowHelp(OptionSet os)
+		{
+			Console.WriteLine("[SGit] Version: {0}", SGit.Config.Consts.SGitVersion);
+			Console.WriteLine("Options:");
+			os.WriteOptionDescriptions(System.Console.Out);
 		}
 
 		private static void Gitmodule(string DirName)

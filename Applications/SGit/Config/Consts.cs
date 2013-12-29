@@ -33,7 +33,7 @@ namespace SGit.Config
 		public const string SGitProduct = "Schumix";
 		public const string SGitCopyright = "Copyright (C) 2013 Schumix Team <http://schumix.eu/>";
 		public const string SGitTrademark = "GNU General Public License";
-		public const string SGitVersion = "1.0.0";
-		public const string SGitFileVersion = "1.0.0.0";
+		public const string SGitVersion = "1.0.1";
+		public const string SGitFileVersion = "1.0.1.0";
 	}
 }
