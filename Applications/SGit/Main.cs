@@ -1,7 +1,7 @@
 /*
  * This file is part of SGit.
  * 
- * Copyright (C) 2013 Schumix Team <http://schumix.eu/>
+ * Copyright (C) 2013-2014 Schumix Team <http://schumix.eu/>
  * 
  * SGit is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
