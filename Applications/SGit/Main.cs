@@ -23,6 +23,7 @@ using NGit;
 using NGit.Api;
 using SGit.Options;
 using SGit.Exceptions;
+using SGit.Extensions;
 
 namespace SGit
 {
@@ -113,7 +114,7 @@ namespace SGit
 				string line = string.Empty;
 				var gitmodule = new StreamReader(Path.Combine(DirName, ".gitmodules"));
 
-				while((line = gitmodule.ReadLine()) != null)
+				while(!(line = gitmodule.ReadLine()).IsNull())
 				{
 					if(line.Contains("path = "))
 						Gitmodule(Path.Combine(DirName, line.Substring(line.IndexOf("path = ") + "path = ".Length))); 
