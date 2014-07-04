@@ -30,11 +30,12 @@ SHARPEN_DLL_MDB=$(BUILD_DIR)/Sharpen.dll.mdb
 NSCH_DLL_SOURCE=../../External/ngit/bin/NSch.dll
 NSCH_DLL_MDB_SOURCE=../../External/ngit/bin/NSch.dll.mdb
 NSCH_DLL_MDB=$(BUILD_DIR)/NSch.dll.mdb
-MONO_SECURITY_DLL_SOURCE=../../External/ngit/Dependencies/Mono.Security.dll
+MONO_LIBRARIES_DLL_SOURCE=../../External/ngit/External/MonoLibraries/bin/Debug/Mono.Libraries.dll
+MONO_LIBRARIES_DLL_MDB_SOURCE=../../External/ngit/External/MonoLibraries/bin/Debug/Mono.Libraries.dll.mdb
+MONO_LIBRARIES_DLL_MDB=$(BUILD_DIR)/Mono.Libraries.dll.mdb
 SHARPEN_UNIX_DLL_SOURCE=../../External/ngit/bin/Sharpen.Unix.dll
 SHARPEN_UNIX_DLL_MDB_SOURCE=../../External/ngit/bin/Sharpen.Unix.dll.mdb
 SHARPEN_UNIX_DLL_MDB=$(BUILD_DIR)/Sharpen.Unix.dll.mdb
-MONO_POSIX_DLL_SOURCE=../../External/ngit/Dependencies/Mono.Posix.dll
 
 endif
 
@@ -61,10 +62,10 @@ SHARPEN_DLL_SOURCE=../../External/ngit/bin/Sharpen.dll
 SHARPEN_DLL_MDB=
 NSCH_DLL_SOURCE=../../External/ngit/bin/NSch.dll
 NSCH_DLL_MDB=
-MONO_SECURITY_DLL_SOURCE=../../External/ngit/Dependencies/Mono.Security.dll
+MONO_LIBRARIES_DLL_SOURCE=../../External/ngit/External/MonoLibraries/bin/Release/Mono.Libraries.dll
+MONO_LIBRARIES_DLL_MDB=
 SHARPEN_UNIX_DLL_SOURCE=../../External/ngit/bin/Sharpen.Unix.dll
 SHARPEN_UNIX_DLL_MDB=
-MONO_POSIX_DLL_SOURCE=../../External/ngit/Dependencies/Mono.Posix.dll
 
 endif
 
@@ -81,10 +82,10 @@ PROGRAMFILES = \
 	$(SHARPEN_DLL_MDB) \
 	$(NSCH_DLL) \
 	$(NSCH_DLL_MDB) \
-	$(MONO_SECURITY_DLL) \
+	$(MONO_LIBRARIES_DLL) \
+	$(MONO_LIBRARIES_DLL_MDB) \
 	$(SHARPEN_UNIX_DLL) \
-	$(SHARPEN_UNIX_DLL_MDB) \
-	$(MONO_POSIX_DLL)  
+	$(SHARPEN_UNIX_DLL_MDB)  
 
 BINARIES = \
 	$(SGIT)  
@@ -120,6 +121,9 @@ RESOURCES =
 EXTRAS = \
 	Properties \
 	Config \
+	Options \
+	Exceptions \
+	Extensions \
 	sgit.in 
 
 REFERENCES =  \
@@ -135,9 +139,8 @@ ICSHARPCODE_SHARPZIPLIB_DLL = $(BUILD_DIR)/ICSharpCode.SharpZipLib.dll
 NGIT_DLL = $(BUILD_DIR)/NGit.dll
 SHARPEN_DLL = $(BUILD_DIR)/Sharpen.dll
 NSCH_DLL = $(BUILD_DIR)/NSch.dll
-MONO_SECURITY_DLL = $(BUILD_DIR)/Mono.Security.dll
+MONO_LIBRARIES_DLL = $(BUILD_DIR)/Mono.Libraries.dll
 SHARPEN_UNIX_DLL = $(BUILD_DIR)/Sharpen.Unix.dll
-MONO_POSIX_DLL = $(BUILD_DIR)/Mono.Posix.dll
 SGIT = $(BUILD_DIR)/sgit
 
 $(eval $(call emit-deploy-target,ICSHARPCODE_SHARPZIPLIB_DLL))
@@ -148,10 +151,10 @@ $(eval $(call emit-deploy-target,SHARPEN_DLL))
 $(eval $(call emit-deploy-target,SHARPEN_DLL_MDB))
 $(eval $(call emit-deploy-target,NSCH_DLL))
 $(eval $(call emit-deploy-target,NSCH_DLL_MDB))
-$(eval $(call emit-deploy-target,MONO_SECURITY_DLL))
+$(eval $(call emit-deploy-target,MONO_LIBRARIES_DLL))
+$(eval $(call emit-deploy-target,MONO_LIBRARIES_DLL_MDB))
 $(eval $(call emit-deploy-target,SHARPEN_UNIX_DLL))
 $(eval $(call emit-deploy-target,SHARPEN_UNIX_DLL_MDB))
-$(eval $(call emit-deploy-target,MONO_POSIX_DLL))
 $(eval $(call emit-deploy-wrapper,SGIT,sgit,x))
 
 

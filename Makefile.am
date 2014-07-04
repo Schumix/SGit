@@ -1,5 +1,5 @@
 
-EXTRA_DIST =  expansions.m4 External/ngit/Dependencies/Mono.Posix.dll External/ngit/Dependencies/Mono.Security.dll
+EXTRA_DIST =  expansions.m4
 
 #Warning: This is an automatically generated file, do not edit!
 if ENABLE_DEBUG

@@ -53,6 +53,8 @@ dnl package checks, per config
 AC_CONFIG_FILES([
 External/ngit/External/SharpZipLib/src/icsharpcode.sharpzlib.pc
 External/ngit/External/SharpZipLib/src/Makefile
+External/ngit/External/MonoLibraries/Mono.Libraries/mono.libraries.pc
+External/ngit/External/MonoLibraries/Mono.Libraries/Makefile
 External/ngit/Sharpen/sharpen.pc
 External/ngit/Sharpen/Makefile
 External/ngit/Sharpen.Unix/sharpen.unix.pc
