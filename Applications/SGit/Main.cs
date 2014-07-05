@@ -85,10 +85,17 @@ namespace SGit
 			}
 			else
 			{
-				if(Directory.Exists(Path.Combine(Environment.CurrentDirectory, ".git")))
-					Gitmodule(Environment.CurrentDirectory);
-				else
-					Console.Error.WriteLine("No such .git directory.");
+				try
+				{
+					if(Directory.Exists(Path.Combine(Environment.CurrentDirectory, ".git")))
+						Gitmodule(Environment.CurrentDirectory);
+					else
+						Console.Error.WriteLine("No such .git directory.");
+				}
+				catch(Exception e)
+				{
+					Console.Error.WriteLine(e);
+				}
 			}
 
 			GC.Collect();
