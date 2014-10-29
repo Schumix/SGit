@@ -5,6 +5,18 @@
 #
 
 #
+# Branches
+# 
+branches:
+  only:
+    - master
+
+#
+# OS
+# 
+os: Windows Server 2012 R2
+
+#
 # Install needed build dependencies
 # 
 install:
@@ -15,7 +27,17 @@ install:
 #
 build:
     project: SGit.sln 
-    verbosity: detailed
+#    verbosity: detailed
+
+#
+# Platform
+#
+platform: Any CPU
+
+#
+# Configuration
+#
+configuration: Release
 
 #
 # Disable tests for now
@@ -26,6 +48,6 @@ test: off
 # NOTE: Create an installation package artifact.
 #
 artifacts:
-    - path: Run/Release
-      name: SGit
+    - path: Run
+      name: $(configuration)
       type: zip
