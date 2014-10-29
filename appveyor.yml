@@ -11,31 +11,19 @@ install:
     - cmd: 'git submodule update --init --recursive'
 
 #
-# NOTE: msbuild doesn't work at present so use Cygwin to build
+# BUILD
 #
 build:
-    project: Schumix.sln 
+    project: SGit.sln 
     verbosity: detailed
 
-# Cygwin build script
-#
-# NOTES:
-#
-# The stdin/stdout file descriptor appears not to be valid for the Appveyor
-# build which causes failures as certain functions attempt to redirect 
-# default file handles. Ensure a dummy file descriptor is opened with exec.
-#
-#build_script:
-#    - cmd: 'git submodule update --init --recursive'
-#    - cmd: '%WINDIR%\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe Schumix.sln /p:Configuration=Debug /flp:LogFile=msbuild.log;Verbosity=Detailed
 #
 # Disable tests for now
 # 
 test: off
 
 #
-# NOTE: Currently this is the Mono installation tree. In future we will create an installation package artifact.
-#       It has to be relative to the project path. Thus we have installed to within the build tree.
+# NOTE: Create an installation package artifact.
 #
 artifacts:
     - path: install
