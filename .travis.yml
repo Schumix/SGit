@@ -1,5 +1,5 @@
 #
-# Schumix2 Hook
+# SGit Hook
 #
 
 # Travis language: c(sharp)
@@ -21,4 +21,4 @@ branches:
 notifications:
   irc:
     channels:
-      - "irc.rizon.net#schumix2"
+      - "flame.yeahunter.hu#dev"
