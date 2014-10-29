@@ -9,8 +9,8 @@
 # 
 environment:
   matrix:
-    - build_version: "Debug"
-    - build_version: "Release"
+    - configuration: Debug
+    - configuration: Release
 
 #
 # Branches
@@ -41,11 +41,6 @@ build:
 # Platform
 #
 platform: Any CPU
-
-#
-# Configuration
-#
-configuration: $env:build_version
 
 #
 # Disable tests for now
