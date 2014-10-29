@@ -5,16 +5,10 @@
 #
 
 #
-# Initialisation
-#
-init:
-    - 'git submodule update --init --recursive'
-
-#
 # Install needed build dependencies
 # 
-#install:
-# - ,,,
+install:
+    - cmd: 'git submodule update --init --recursive'
 
 #
 # NOTE: msbuild doesn't work at present so use Cygwin to build
