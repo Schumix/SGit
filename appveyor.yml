@@ -26,6 +26,6 @@ test: off
 # NOTE: Create an installation package artifact.
 #
 artifacts:
-    - path: install
+    - path: Run/Release
       name: SGit
       type: zip
