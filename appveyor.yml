@@ -5,6 +5,14 @@
 #
 
 #
+# Environment
+# 
+environment:
+  matrix:
+    - build_version: "Debug"
+    - build_version: "Release"
+
+#
 # Branches
 # 
 branches:
@@ -37,7 +45,7 @@ platform: Any CPU
 #
 # Configuration
 #
-configuration: Debug
+configuration: $env:build_version
 
 #
 # Disable tests for now
